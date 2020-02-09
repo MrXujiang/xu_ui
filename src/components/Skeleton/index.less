@@ -1,0 +1,77 @@
+.skeletonWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0, .6);
+  .skeletonContent {
+    position: relative;
+    margin: 200px auto 0;
+    padding: 20px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    &::after {
+      content: '正在为您疯狂加载...';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 0;
+      height: 100%;
+      border-right: 2px solid #ccc;
+      box-shadow: 0 0 8px #000;
+      background: #096;
+      color: rgba(255, 255, 255, 0);
+      font-size: 24px;
+      white-space: nowrap;
+      animation: spread 18s 3s infinite;
+    }
+    @keyframes spread {
+      0% {
+        width: 0;
+        color: rgba(255, 255, 255, 0);
+      }
+      100% {
+        width: 100%;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
+    .imgBox {
+      width: 420px;
+      img {
+        width: 100%;
+      }
+    }
+    .rightBox {
+      flex: 1;
+      .tit {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 22px;
+      }
+      .labelWrap {
+        span {
+          margin: 3px;
+          display: inline-block;
+          font-size: 12px;
+          padding: 2px 6px;
+          border-radius: 3px;
+          color: #fff;
+          background-color: #58bd6b;
+        }
+      }
+      .desc {
+        color: rgb(44, 44, 44);
+        font-size: 14px;
+      }
+    }
+  }
+}

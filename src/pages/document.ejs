@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>趣谈前端</title>
+    <link rel="icon" href="https://lab-oss-dev02.oss-cn-shanghai.aliyuncs.com/dr/das/images/ico.png" type="image/x-icon" />
+  </head>
+  <body>
+    <noscript>浏览器版本过低,请更新浏览器!</noscript>
+    <div id="root">
+      <style>
+        .skeletonWrap {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0, .6);
+        }
+        .skeletonWrap .skeletonContent {
+          position: relative;
+          margin: 200px auto 0;
+          padding: 20px;
+          width: 800px;
+          display: flex;
+          align-items: center;
+          border-radius: 8px;
+          overflow: hidden;
+          background-color: #fff;
+        }
+        .skeletonWrap .skeletonContent::after {
+          content: '正在为您疯狂加载...';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 0;
+          height: 100%;
+          border-right: 2px solid #ccc;
+          box-shadow: 0 0 8px #000;
+          background: #096;
+          color: rgba(255, 255, 255, 0);
+          font-size: 24px;
+          white-space: nowrap;
+          animation: spread 18s 3s infinite;
+        }
+
+        .skeletonContent .imgBox {
+          width: 420px;
+        }
+
+        .skeletonContent .imgBox img {
+          width: 100%;
+        }
+        
+        .skeletonContent .rightBox {
+          flex: 1;
+        }
+
+        .skeletonContent .rightBox .tit {
+          margin-top: 8px;
+          margin-bottom: 8px;
+          font-size: 22px;
+        }
+
+        .skeletonContent .rightBox .labelWrap span {
+          margin: 3px;
+          display: inline-block;
+          font-size: 12px;
+          padding: 2px 6px;
+          border-radius: 3px;
+          color: #fff;
+          background-color: #66CC99;
+        }
+        .rightBox .desc {
+          color: rgb(44, 44, 44);
+          font-size: 14px;
+        }
+        @keyframes spread {
+          0% {
+            width: 0;
+            color: rgba(255, 255, 255, 0);
+          }
+          100% {
+            width: 100%;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+      </style>
+      <div class="skeletonWrap">
+        <div class="skeletonContent">
+          <div class="imgBox">
+            <img src="/code_white.png" alt="趣谈前端,学前端学React" />
+          </div>
+          <div class="rightBox">
+            <h2 class="tit">趣谈前端@徐小夕的Blog</h2>
+            <div class="labelWrap">
+              <span>前端</span>
+              <span>前端框架</span>
+              <span>前端面试</span>
+              <span>前端职业发展规划</span>
+              <span>React/Vue/Jquery</span>
+              <span>前端工程化/可视化</span>
+            </div>
+            <p class="desc">
+              趣谈前端作为笔者开创的第一个专栏,主要用来总结笔者在多年前端工作中积累的React,Vue, Node, javascript, CSS,
+              设计模式,工程化的实战经验,作为一名一线的架构师和面试官, 也会总结一些前端的面试经验和职业思考和规划.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
