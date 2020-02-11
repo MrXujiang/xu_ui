@@ -1,5 +1,5 @@
 # xui——基于react的轻量级UI组件库
-xui是笔者开发的基于react的轻量级组件库，目前不依赖任何第三方ui组件库，支持按需导入，可定制。
+xui是笔者开发的基于react的轻量级组件库，目前不依赖任何第三方ui组件库，支持按需导入，可定制。官网地址website: [xui——基于react的轻量级UI组件库](https://mrxujiang.github.io/xu_ui/)
 
 目前已开发完成如下ui组件：
 * Button 按钮组件
@@ -10,6 +10,7 @@ xui是笔者开发的基于react的轻量级组件库，目前不依赖任何第
 * Skeleton 专为个人网站准备的骨架屏组件
 * Switch 开关组件
 * Tag tag标签页组件
+* Icon组件（基于react-icons的二次封装）
 
 正在开发的组件：
 * Modal 对话框组件
@@ -26,6 +27,11 @@ xui是笔者开发的基于react的轻量级组件库，目前不依赖任何第
 * react: 16.8.6
 * react-dom: 6.8.6
 * classnames
+
+# 文档demo演示
+<img src="01.png" />
+<img src="02.png" />
+<img src="03.png" />
 
 # 使用
 
