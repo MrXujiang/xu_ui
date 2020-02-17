@@ -1,22 +1,28 @@
 # xui——基于react的轻量级UI组件库
 xui是笔者开发的基于react的轻量级组件库，目前不依赖任何第三方ui组件库，支持按需导入，可定制。官网地址website: [xui——基于react的轻量级UI组件库](https://mrxujiang.github.io/xu_ui/)
 
+如果觉得官网地址访问太慢，可以直接移步github地址：[xui——基于react的轻量级UI组件库](https://github.com/MrXujiang/xu_ui)
+
 目前已开发完成如下ui组件：
 * Button 按钮组件
 * Badge 徽标数组件
 * Alert 警告提示组件
 * Drawer 抽屉组件
 * Progress 进度条组件
-* Skeleton 专为个人网站准备的骨架屏组件
 * Switch 开关组件
 * Tag tag标签页组件
+* Modal 轻量实用的模态窗组件
 * Icon组件（基于react-icons的二次封装）
+* Input 输入框组件
+* Spin 加载组件
+* Notification 通知提示
+* Message 消息提示框组件
+* Empty 空状态组件
+* Skeleton 专为个人网站准备的骨架屏组件
 
 正在开发的组件：
-* Modal 对话框组件
 * Form form表单组件
 * Table 列表组件
-* Message 消息提示框组件
 * Menu 菜单组件
 * DropDown 下拉框组件
 
@@ -134,14 +140,19 @@ export default function() {
   )
 }
 
-
-
 ```
-
 
 # API文档
 正在搭建中，具体使用方式可参考：
-[《精通react/vue组件设计》之实现一个可定制的进度条组件](https://juejin.im/post/5e366772f265da3e307710dd)
+* [手摸手实现一个轻量级可扩展的模态框(Modal)组件](https://juejin.im/post/5e416e78e51d45270f52b062)
+* [《精通react/vue组件设计》之配合React Portals实现一个功能强大的抽屉(Drawer)组件](https://juejin.im/post/5e3e7b8fe51d4526fb5dcddb)
+* [《精通react/vue组件设计》之5分钟实现一个Tag(标签)组件和Empty(空状态)组件](https://juejin.im/post/5e3cc898e51d4526d87c6037)
+* [《精通react/vue组件设计》之用纯css打造类materialUI的按钮点击动画并封装成react组件](https://juejin.im/post/5e35294d518825263237f3ba)
+* [《精通react/vue组件设计》之快速实现一个可定制的进度条组件](https://juejin.im/post/5e366772f265da3e307710dd)
+* [《精通react/vue组件设计》之基于jsoneditor二次封装一个可实时预览的json编辑器组件(react版)](https://juejin.im/post/5e302af8e51d453cc04abc56)
+
+# 技术交流与反馈
+微信（wechat）：qunqiujinkou
 
 欢迎提出更多issue以便让组件库更健壮
 
