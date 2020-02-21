@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import styles from './index.less'
+import './index.less'
 
 const colorArr = {
   'success': '#52c41a',
@@ -25,7 +25,7 @@ const colorArr = {
 function Badge(props) {
   const {
     color,
-    count = 1,
+    count = 0,
     dot,
     offset,
     overflowCount,
@@ -35,15 +35,15 @@ function Badge(props) {
     style,
     children
   } = props
-  return <div className={styles.xBadgeWrap}>
+  return <div className="xBadgeWrap">
     {
-      status || color ? <div className={styles.statusDotWrap}>
-        <span className={styles.dot} style={{backgroundColor: color || colorArr[status] || colorArr.default}}></span>
+      status || color ? <div className="statusDotWrap">
+        <span className="dot" style={{backgroundColor: color || colorArr[status] || colorArr.default}}></span>
         { text }
       </div> :
         <div>
           <span 
-            className={classnames(styles.badge, dot ? styles.badgeDot : '')} 
+            className={classnames('badge', dot ? 'badgeDot' : '')} 
             style={{
               right: offset ? offset[0] + 'px' : '', 
               top: offset ? offset[1] + 'px' : '',

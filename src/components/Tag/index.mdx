@@ -1,0 +1,42 @@
+---
+name: Tag
+route: /Tag
+order: 7
+sidebar: true
+---
+
+import { Playground } from 'docz'
+import Tag from './index'
+
+# Tag标签
+
+#### 基本使用
+<Playground>
+    <Tag color="#06c">标签</Tag>
+    <Tag color="red">标签</Tag>
+    <Tag color="orange">标签</Tag>
+    <Tag >标签</Tag><br />
+    <Tag color="green" closable>标签</Tag>
+    <Tag closable>标签</Tag>
+</Playground>
+
+#### 关闭时的回调
+<Playground>
+    <Tag color="green" closable onClose={() => {alert('tag关闭')}}>标签</Tag>
+</Playground>
+
+## 使用
+
+``` js
+import { Tag } from '@xlab/xu_ui'
+
+// 导入
+<Tag />
+```
+
+## API文档
+|  参数  |  说明  |  类型  |  默认值  |
+|  ---   |  ---  |  ---  |  ---  |
+|  closable  |  是否可关闭  |  bool  |  false  |
+|  onClose  |  标签关闭时的回调  |  func  |   |
+|  color  |  标签的颜色,不设置则为默认颜色  |  string  |  '#fafafa'  |

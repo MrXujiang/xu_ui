@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import styles from './index.less'
+import './index.less'
 
 /**
  * 标签组件
@@ -16,10 +16,10 @@ export default function Tag(props) {
     tag.current.style.display = 'none'
   }
   return <div 
-    className={classnames(styles.xTag, color ? styles.xTagHasColor : '')} 
+    className={classnames('xTag', color ? 'xTagHasColor' : '')} 
     style={{ backgroundColor: color }}
     ref={tag}>
     { children } 
-    { closable && <span className={styles.closeBtn} onClick={handleClose}>x</span> }
+    { closable && <span className="closeBtn" onClick={handleClose}>x</span> }
   </div>
 }

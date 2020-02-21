@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import styles from './index.less'
+import './index.less'
 
 /**
  * @param {onClick} func 对外暴露的点击事件
@@ -9,7 +9,7 @@ import styles from './index.less'
  */
 export default function Button(props) {
   let { children, onClick, className, type, shape, block } = props
-  return <div className={classnames(styles.xButton, styles.ripple, styles[type], styles[shape], block ? styles.block : '', className)} onClick={onClick}>
+  return <div className={classnames('xButton', 'ripple', type, shape, block ? 'block' : '', className)} onClick={onClick}>
     { children }
   </div>
 }

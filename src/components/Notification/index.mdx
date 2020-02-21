@@ -1,0 +1,179 @@
+---
+name: Notification
+route: /Notification
+order: 8
+sidebar: true
+---
+
+import { Playground } from 'docz'
+import xNotification from './index'
+import Button from '../Button'
+import Icon from '../Icon'
+
+## Notification通知提示
+
+#### 1.基本使用
+<Playground>
+    <Button onClick={
+        () => {
+            xNotification.pop({
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>默认通知信息</Button><br />
+    <Button type="primary" onClick={
+        () => {
+            xNotification.pop({
+                type: 'success',
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>成功通知(success)</Button><br />
+    <Button type="pure" onClick={
+        () => {
+            xNotification.pop({
+                type: 'info',
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>信息通知(info)</Button><br />
+    <Button type="primary" onClick={
+        () => {
+            xNotification.pop({
+                type: 'warning',
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>警告通知(warning)</Button><br />
+    <Button type="warning" onClick={
+        () => {
+            xNotification.pop({
+                type: 'error',
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>错误信息通知(error)</Button>
+</Playground>
+
+#### 2.自定义位置和icon
+<Playground>
+    <Button onClick={
+        () => {
+            xNotification.config({
+                placement: 'topLeft'
+            })
+            xNotification.pop({
+                message: '趣谈前端学习打卡',
+                duration: 0,
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>topLeft</Button><i style={{marginLeft: '16px'}} />
+    <Button type="primary" onClick={
+        () => {
+            xNotification.config({
+                placement: 'topRight'
+            })
+            xNotification.pop({
+                type: 'success',
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>topRight</Button><i style={{marginLeft: '16px'}} />
+    <Button type="pure" onClick={
+        () => {
+            xNotification.config({
+                placement: 'bottomLeft'
+            })
+            xNotification.pop({
+                type: 'info',
+                message: '趣谈前端学习打卡',
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>bottomLeft</Button><i style={{marginLeft: '16px'}} />
+    <Button type="primary" onClick={
+        () => {
+            xNotification.config({
+                placement: 'bottomRight'
+            })
+            xNotification.pop({
+                type: 'warning',
+                message: '趣谈前端学习打卡',
+                duration: 0,
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>bottomRight</Button><i style={{marginLeft: '16px'}} />
+    <Button type="warning" onClick={
+        () => {
+            xNotification.pop({
+                type: 'error',
+                icon: <Icon type="FaRegSadCry" />,
+                message: '趣谈前端学习打卡',
+                duration: 0,
+                description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+            })
+        }
+    }>修改通知框icon</Button><i style={{marginLeft: '16px'}} />
+    <Button type="warning" onClick={
+        () => {
+            xNotification.destroy()
+        }
+    }>销毁notification</Button>
+</Playground>
+
+## 使用介绍
+``` js
+import { Notification } from '@alex_xu/xui'
+
+// 使用
+xNotification.pop({
+    type: 'warning',
+    message: '趣谈前端学习打卡',
+    duration: 0,
+    description: '前端基础，中级进阶，高级打卡，一起玩转前端，996远离你'
+})
+
+// 全局配置
+xNotification.config({
+    placement: 'bottomRight'
+})
+```
+
+ ## API文档
+
+ ### xNotification的全局属性
+|  参数  |  说明  |  类型  |  默认值  |
+|  ---   |  ---  |  ---  |  ---  |
+|  bottom  |  消息从底部弹出时，距离底部的位置，单位像素  |  number  |  '24px'  |
+|  duration  |  默认自动关闭延时，单位秒  |  number  |  4.5s  |
+|  getContainer  |  HTMLNode 配置渲染节点的输出位置  |  () => HTMLNode  |  () => document.body  |
+|  placement  |  弹出位置(topLeft/topRight/bottomLeft/bottomRight)  |  string  |   'topRight'  |
+|  top  |  消息从顶部弹出时，距离顶部的位置，单位像素  |  number  |  '24px'  |
+|  closeIcon  |  自定义关闭图标  |  HTMLNode  |    |
+
+ ### notice属性
+|  参数  |  说明  |  类型  |  默认值  |
+|  ---   |  ---  |  ---  |  ---  |
+|  type  |  通知窗类型('info|success|error|warning'等)  |  string  |  ''  |
+|  btn  |  自定义关闭按钮  |  ReactNode  |   |
+|  bottom  |  消息从底部弹出时，距离底部的位置，单位像素  |  number  |    |
+|  className  |  自定义内容的class  |  string  |    |
+|  description  |  通知提醒内容，必选  |  string|ReactNode  |    |
+|  duration  |  默认 4.5 秒后自动关闭，配置为 null 则不自动关闭  |  number  |  4.5  |
+|  closeIcon  |  自定义关闭图标  |  ReactNode  |    |
+|  getContainer  |  配置渲染节点的输出位置  |  HTMLNode  |    |
+|  icon  |  自定义图标  |  ReactNode  |    |
+|  key  |  当前通知唯一标志  |  string  |    |
+|  message  |  通知提醒标题，必选  |  string|ReactNode  |    |
+|  onClose  |  点击默认关闭按钮时触发的回调函数  |  func  |    |
+|  onClick  |  点击通知时触发的回调函数  |  func  |    |
+|  top  |  消息从顶部弹出时，距离顶部的位置，单位像素  |  func  |    |
+

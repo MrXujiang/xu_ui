@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import styles from './index.less'
+import './index.less'
 
 /**
  * Drawer 抽屉组件
@@ -60,16 +60,16 @@ function Drawer(props) {
 
   const childDom = (
     <div 
-      className={styles.xDrawerWrap} 
+      className="xDrawerWrap" 
       style={{
         position: getContainer === false ? 'absolute' : 'fixed',
         width: visible ? '100%' : '0',
         zIndex
       }}
     >
-      { !!mask && <div className={styles.xDrawerMask} onClick={maskClosable ? handleClose : null}></div> }
+      { !!mask && <div className="xDrawerMask" onClick={maskClosable ? handleClose : null}></div> }
       <div 
-        className={styles.xDrawerContent} 
+        className="xDrawerContent" 
         style={{
           width,
           [placement]: visible ? 0 : '-100%',
@@ -79,7 +79,7 @@ function Drawer(props) {
           isDesChild ? null : children
         }
         {
-          !!closable && <span className={styles.xCloseBtn} onClick={handleClose}>X</span>
+          !!closable && <span className="xCloseBtn" onClick={handleClose}>X</span>
         }
       </div>
     </div>

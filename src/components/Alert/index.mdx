@@ -1,0 +1,58 @@
+---
+name: Alert
+route: /Alert
+order: 5
+sidebar: true
+---
+
+import { Playground } from 'docz'
+import Alert from './index'
+
+# Alert警告提示组件
+#### 默认
+
+<Playground>
+    <Alert message="温馨提示：您的小票已出，快来火车站获取吧～" />
+</Playground>
+
+#### 可关闭
+
+<Playground>
+    <Alert message="温馨提示：您的小票已出，快来火车站获取吧～" closable />
+</Playground>
+
+#### 主题类型
+
+<Playground>
+    <Alert message="出票成功：您的小票已出，快来火车站获取吧～" type="success" />
+    <Alert message="出票错误：react错误，返回首页～" type="error" />
+    <Alert message="出票通知：您的小票已出，快来火车站获取吧～～" type="info" />
+    <Alert message="温馨提示：您的小票已出，快来火车站获取吧～" />
+</Playground>
+
+#### 配置提示辅助文字
+
+<Playground>
+    <Alert message="出票通知" description="您的小票已出，快来火车站获取吧～～" type="info" />
+    <Alert message="验证成功" description="您的代码提交成功，快来火车站获取吧～～" type="success" closable />
+</Playground>
+
+## 用法
+
+``` js
+import { Alert } from '@xlab/xu_ui'
+
+// 导入
+<Alert message="验证成功" description="您的代码提交成功，快来火车站获取吧～～" type="success" closable />
+```
+
+## API文档
+|  参数  |  说明  |  类型  |  默认值  |
+|  ---   |  ---  |  ---  |  ---  |
+|  style  |  更改Alert样式  |  object  |  |
+|  closable  |  是否显示关闭按钮, 默认不显示  |  bool  |  false  |
+|  closeText  |  自定义关闭按钮  |  string|reactNode  |  'x'  |
+|  message  |  警告提示内容  |  string  |    |
+|  description  |  警告提示的辅助性文字  |  string  |    |
+|  type  |  警告的类型  |  string  |   'warning' |
+|  onClose  |  关闭时触发的事件  |  func  |    |

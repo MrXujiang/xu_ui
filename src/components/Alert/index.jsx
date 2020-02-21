@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import styles from './index.less'
+import './index.less'
 
 /**
  * 警告提示组件
@@ -31,16 +31,16 @@ function Alert(props) {
   }
   return visible ? 
     <div 
-      className={classnames(styles.xAlertWrap, styles[type] || styles.warning)}
+      className={classnames('xAlertWrap', type || 'warning')}
       style={{
         opacity: visible ? '1' : '0',
         ...style
       }}
     >
-      <div className={styles.alertMes}>{ message }</div>
-      <div className={styles.alertDesc}>{ description }</div>
+      <div className='alertMes'>{ message }</div>
+      <div className='alertDesc'>{ description }</div>
       {
-        !!closable && <span className={styles.closeBtn} onClick={handleColse}>{ closeText ? closeText : 'x' }</span>
+        !!closable && <span className='closeBtn' onClick={handleColse}>{ closeText ? closeText : 'x' }</span>
       }
     </div> : null
 }

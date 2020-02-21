@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './index.less'
+import './index.less'
 
 // 升序排序
 let sortArr = arr => arr.sort((a,b) => a[0] - b[0])
@@ -47,10 +47,10 @@ function Progress(props) {
   } = props
   return +percent === 100 && autoHidden ? 
     null : 
-    <div className={styles.progressWrap}>
-      <div className={styles.progressBar} style={{ width: typeof width === 'number' ? width + 'px' : width }}>
+    <div className="progressWrap">
+      <div className="progressBar" style={{ width: typeof width === 'number' ? width + 'px' : width }}>
         <div 
-          className={styles.progressInnerBar} 
+          className="progressInnerBar" 
           style={{
             width: `${percent}%`,
             backgroundColor: statusScope && statusScope.length ? checkStatus(statusScope, percent, themeColor) : themeColor
@@ -59,7 +59,7 @@ function Progress(props) {
         </div>
       </div>
       {
-        !hiddenText && <span className={styles.progressText} style={{ color: textColor }}>{percent + '%'}</span>
+        !hiddenText && <span className="progressText" style={{ color: textColor }}>{percent + '%'}</span>
       }
     </div>
 }

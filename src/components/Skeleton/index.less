@@ -1,5 +1,6 @@
 .skeletonWrap {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   right: 0;
   top: 0;
@@ -16,7 +17,7 @@
     overflow: hidden;
     background-color: #fff;
     &::after {
-      content: '正在为您疯狂加载...';
+      content: attr(data-loadingText);
       position: absolute;
       top: 0;
       left: 0;
